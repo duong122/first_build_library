@@ -22,16 +22,16 @@ export function createStore(reducer) {
 
     return {
         attach(component, root) {
-            roots.set(root, component)
+            roots.set(root, component) 
             render()
         },
-        connnect(selector = state => state) {
+        connect(selector = state => state) {
             return component => (props, ...args) => 
                 component(Object.assign({}, props, selector(state), ...args))
         },
         dispatch(action, ...args) {
             state = reducer(state, action, args)
             render()
-        }
+        },
     }
 }

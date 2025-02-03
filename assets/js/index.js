@@ -1,3 +1,4 @@
 import { attach } from "./store.js"
+import App from '../components/App.js'
 
-attach(() => '<h1>Hello, Worlld !</h1>', document.getElementById('root'))
+attach(App, document.getElementById('root'))
